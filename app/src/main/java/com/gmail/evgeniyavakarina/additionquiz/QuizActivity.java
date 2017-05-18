@@ -13,9 +13,6 @@ public class QuizActivity extends AppCompatActivity {
     private Questioner mQuestioner = new Questioner();
     private TextView mQuestionTextView;
     private RadioGroup mRadioGroup;
-    private RadioButton mRadioButton1;
-    private RadioButton mRadioButton2;
-    private RadioButton mRadioButton3;
     private Button mSubmitButton;
 
     @Override
@@ -27,9 +24,6 @@ public class QuizActivity extends AppCompatActivity {
         mQuestionTextView = (TextView) findViewById(R.id.questionTextView);
         mRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         mSubmitButton = (Button) findViewById(R.id.button);
-        mRadioButton1 = (RadioButton) findViewById(R.id.option1);
-        mRadioButton2 = (RadioButton) findViewById(R.id.option2);
-        mRadioButton3 = (RadioButton) findViewById(R.id.option3);
 
         //create the first question
         upDateViews();
