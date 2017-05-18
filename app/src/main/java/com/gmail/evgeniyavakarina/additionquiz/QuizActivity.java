@@ -51,6 +51,14 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+    }
+
     /**
     * get data from Questioner and update the views with it
     */
