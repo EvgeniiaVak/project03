@@ -38,7 +38,7 @@ public class Questioner {
         //fill the rest answers with some random numbers
         for (int i = 0; i < answers.length; i++) {
             if (answers[i] == 0) {
-                int falseAnswer = mRandom.nextInt(150);
+                int falseAnswer = mCorrectAnswer + mRandom.nextInt(30) - 15;
 
                 //prevent the false answer being equal to right one
                 while (falseAnswer == mCorrectAnswer) {
