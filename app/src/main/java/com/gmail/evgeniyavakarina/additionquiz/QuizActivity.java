@@ -2,7 +2,10 @@ package com.gmail.evgeniyavakarina.additionquiz;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -14,6 +17,8 @@ public class QuizActivity extends AppCompatActivity {
     private TextView mQuestionTextView;
     private RadioGroup mRadioGroup;
     private Button mSubmitButton;
+    private TextView mToastTextView;
+    private Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,16 @@ public class QuizActivity extends AppCompatActivity {
         //create the first question
         upDateViews();
 
+        //manage toast
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.toast_container));
+        mToastTextView = (TextView) layout.findViewById(R.id.toast_textView);
+        mToast = new Toast(getApplicationContext());
+        mToast.setGravity(Gravity.CENTER_HORIZONTAL, 0, 225);
+        mToast.setDuration(Toast.LENGTH_SHORT);
+        mToast.setView(layout);
+
+
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,14 +53,17 @@ public class QuizActivity extends AppCompatActivity {
 
                     //check if the answer was correct
                     if (mQuestioner.isChoiceCorrect(answer)) {
-                        Toast.makeText(QuizActivity.this, "Correct!", Toast.LENGTH_SHORT).show();
+                        mToastTextView.setText("Correct!");
+                        mToast.show();
                         upDateViews();
                         mRadioGroup.clearCheck();
                     } else {
-                        Toast.makeText(QuizActivity.this, "Incorrect", Toast.LENGTH_SHORT).show();
+                        mToastTextView.setText("Incorrect!");
+                        mToast.show();
                     }
                 } else {
-                    Toast.makeText(QuizActivity.this, "Select an answer", Toast.LENGTH_SHORT).show();
+                    mToastTextView.setText("Select an answer!");
+                    mToast.show();
                 }
             }
         });

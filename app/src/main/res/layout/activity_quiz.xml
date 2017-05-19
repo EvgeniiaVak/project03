@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+                android:background="@color/colorBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.gmail.evgeniyavakarina.additionquiz.QuizActivity">
@@ -13,14 +14,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@android:dimen/notification_large_icon_height"
+        android:layout_marginBottom="@android:dimen/app_icon_size"
         android:layout_marginTop="@android:dimen/notification_large_icon_height"
-        android:text="What is A + B?"
-        android:textSize="26sp"
-        android:textColor="@color/colorBackgroundLight"
-        android:padding="10dp"
         android:background="@drawable/answer_text_background"
-        tools:text="What is A + B?" />
+        android:padding="10dp"
+        android:text="What is A + B?"
+        android:textColor="@color/colorLightBlue"
+        android:textSize="26sp"
+        tools:text="What is A + B?"/>
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -63,7 +64,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@color/colorPrimary"
-        android:textColor="@color/colorBackgroundLight"
+        android:textColor="@color/colorLightBlue"
         android:textStyle="bold"
         android:textSize="25sp"
         android:padding="5dp"
