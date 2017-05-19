@@ -17,6 +17,9 @@
         android:layout_marginTop="@android:dimen/notification_large_icon_height"
         android:text="What is A + B?"
         android:textSize="26sp"
+        android:textColor="@color/colorBackgroundLight"
+        android:padding="10dp"
+        android:background="@drawable/answer_text_background"
         tools:text="What is A + B?" />
 
     <RadioGroup
@@ -31,28 +34,22 @@
             android:id="@+id/option1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
-            android:text="1"
-            android:textSize="24sp" />
+            style="@style/MyRadioButton"
+            android:text="1" />
 
         <RadioButton
             android:id="@+id/option2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
-            android:text="2"
-            android:textSize="24sp" />
+            style="@style/MyRadioButton"
+            android:text="2" />
 
         <RadioButton
             android:id="@+id/option3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
-            android:text="3"
-            android:textSize="24sp" />
+            style="@style/MyRadioButton"
+            android:text="3" />
 
     </RadioGroup>
 
@@ -65,6 +62,10 @@
         android:layout_marginBottom="25dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorBackgroundLight"
+        android:textStyle="bold"
+        android:textSize="25sp"
         android:padding="5dp"
         android:text="SUBMIT" />
 
